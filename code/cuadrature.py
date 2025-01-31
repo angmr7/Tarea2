@@ -1,23 +1,23 @@
 import numpy as np
 
 def gaussxw(N):
-    """Calculate sample points and weights for Gaussian quadrature.
+    """Calcular puntos de muestra y pesos para la cuadratura gaussiana.
 
-    This function computes the sample points and weights for the
-    Gaussian quadrature of order N. It uses the Newton's method to
-    find the roots of the Legendre polynomial.
+    Esta función calcula los puntos de muestra y los pesos para la
+    cuadratura gaussiana de orden N. Utiliza el método de Newton para
+    encontrar las raíces del polinomio de Legendre.
 
     Examples:
         >>> gaussxw(2)
         (array([0.57735027, 0.57735027]), array([1., 1.]))
 
     Args:
-        N (int): The order of the Gaussian quadrature.
+        N (int): El orden de la cuadratura gaussiana.
 
     Returns:
-        tuple: A tuple containing two numpy arrays:
-            - x (numpy.ndarray): The sample points.
-            - w (numpy.ndarray): The weights corresponding to the sample points.
+        tuple: Una tupla que contiene dos arreglos de numpy:
+            - x (numpy.ndarray): Los puntos de muestra.
+            - w (numpy.ndarray): Los pesos correspondientes a los puntos de muestra.
     """
     a = np.linspace(3, 4 * (N - 1), N) / ((4 * N) + 2)
     x = np.cos(np.pi * a + 1 / (8 * N * N * np.tan(a)))
@@ -38,43 +38,43 @@ def gaussxw(N):
     return x, w
 
 def gaussxwab(a, b, x, w):
-    """Scale sample points and weights to a specific interval.
+    """Escalar puntos de muestra y pesos a un intervalo específico.
 
-    This function scales the sample points and weights obtained from
-    the Gaussian quadrature to the interval [a, b].
+    Esta función escala los puntos de muestra y los pesos obtenidos de
+    la cuadratura gaussiana al intervalo [a, b].
 
     Examples:
         >>> gaussxwab(0,2, x0_points_N_2, weights_N_2)
         (array([1.57735027, 1.57735027]), array([1., 1.]))
 
     Args:
-        a (float): The start of the interval.
-        b (float): The end of the interval.
-        x (numpy.ndarray): The sample points.
-        w (numpy.ndarray): The weights.
+        a (float): El inicio del intervalo.
+        b (float): El final del intervalo.
+        x (numpy.ndarray): Los puntos de muestra.
+        w (numpy.ndarray): Los pesos.
 
     Returns:
-        tuple: A tuple containing two numpy arrays:
-            - scaled_x (numpy.ndarray): The scaled sample points.
-            - scaled_w (numpy.ndarray): The scaled weights.
+        tuple: Una tupla que contiene dos arreglos de numpy:
+            - scaled_x (numpy.ndarray): Los puntos de muestra escalados.
+            - scaled_w (numpy.ndarray): Los pesos escalados.
     """
     return 0.5 * (b - a) * x + 0.5 * (b + a), 0.5 * (b - a) * w
 
 def int_function(x):
-    """Compute the value of the integrand function.
+    """Calcular el valor de la función integrando.
 
-    This function computes the value of the function to be integrated,
-    which is x^6 - x^2 * sin(2 * x).
+    Esta función calcula el valor de la función a integrar,
+    que es x^6 - x^2 * sin(2 * x).
 
     Examples:
         >>> int_function(3)
         731.5147394837903
 
     Args:
-        x (float or numpy.ndarray): The input value(s).
+        x (float o numpy.ndarray): El valor o valores de entrada.
 
     Returns:
-        float or numpy.ndarray: The computed value of the function.
+        float o numpy.ndarray: El valor calculado de la función.
     """
     return x**6 - x**2 * np.sin(2 * x)
 
