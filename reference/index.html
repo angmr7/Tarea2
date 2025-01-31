@@ -418,10 +418,10 @@
 
     <div class="doc doc-contents ">
 
-        <p>Calculate sample points and weights for Gaussian quadrature.</p>
-<p>This function computes the sample points and weights for the
-Gaussian quadrature of order N. It uses the Newton's method to
-find the roots of the Legendre polynomial.</p>
+        <p>Calcular puntos de muestra y pesos para la cuadratura gaussiana.</p>
+<p>Esta función calcula los puntos de muestra y los pesos para la
+cuadratura gaussiana de orden N. Utiliza el método de Newton para
+encontrar las raíces del polinomio de Legendre.</p>
 
 
 <p><span class="doc-section-title">Examples:</span></p>
@@ -450,7 +450,7 @@ find the roots of the Legendre polynomial.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The order of the Gaussian quadrature.</p>
+                <p>El orden de la cuadratura gaussiana.</p>
               </div>
             </td>
             <td>
@@ -475,9 +475,9 @@ find the roots of the Legendre polynomial.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A tuple containing two numpy arrays:
-- x (numpy.ndarray): The sample points.
-- w (numpy.ndarray): The weights corresponding to the sample points.</p>
+                <p>Una tupla que contiene dos arreglos de numpy:
+- x (numpy.ndarray): Los puntos de muestra.
+- w (numpy.ndarray): Los pesos correspondientes a los puntos de muestra.</p>
               </div>
             </td>
           </tr>
@@ -522,23 +522,23 @@ find the roots of the Legendre polynomial.</p>
 <span class="normal">36</span>
 <span class="normal">37</span>
 <span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussxw</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate sample points and weights for Gaussian quadrature.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calcular puntos de muestra y pesos para la cuadratura gaussiana.</span>
 
-<span class="sd">    This function computes the sample points and weights for the</span>
-<span class="sd">    Gaussian quadrature of order N. It uses the Newton&#39;s method to</span>
-<span class="sd">    find the roots of the Legendre polynomial.</span>
+<span class="sd">    Esta función calcula los puntos de muestra y los pesos para la</span>
+<span class="sd">    cuadratura gaussiana de orden N. Utiliza el método de Newton para</span>
+<span class="sd">    encontrar las raíces del polinomio de Legendre.</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        &gt;&gt;&gt; gaussxw(2)</span>
 <span class="sd">        (array([0.57735027, 0.57735027]), array([1., 1.]))</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        N (int): The order of the Gaussian quadrature.</span>
+<span class="sd">        N (int): El orden de la cuadratura gaussiana.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        tuple: A tuple containing two numpy arrays:</span>
-<span class="sd">            - x (numpy.ndarray): The sample points.</span>
-<span class="sd">            - w (numpy.ndarray): The weights corresponding to the sample points.</span>
+<span class="sd">        tuple: Una tupla que contiene dos arreglos de numpy:</span>
+<span class="sd">            - x (numpy.ndarray): Los puntos de muestra.</span>
+<span class="sd">            - w (numpy.ndarray): Los pesos correspondientes a los puntos de muestra.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">N</span><span class="p">)</span> <span class="o">/</span> <span class="p">((</span><span class="mi">4</span> <span class="o">*</span> <span class="n">N</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="n">N</span> <span class="o">*</span> <span class="n">N</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span>
@@ -574,9 +574,9 @@ find the roots of the Legendre polynomial.</p>
 
     <div class="doc doc-contents ">
 
-        <p>Scale sample points and weights to a specific interval.</p>
-<p>This function scales the sample points and weights obtained from
-the Gaussian quadrature to the interval [a, b].</p>
+        <p>Escalar puntos de muestra y pesos a un intervalo específico.</p>
+<p>Esta función escala los puntos de muestra y los pesos obtenidos de
+la cuadratura gaussiana al intervalo [a, b].</p>
 
 
 <p><span class="doc-section-title">Examples:</span></p>
@@ -605,7 +605,7 @@ the Gaussian quadrature to the interval [a, b].</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The start of the interval.</p>
+                <p>El inicio del intervalo.</p>
               </div>
             </td>
             <td>
@@ -621,7 +621,7 @@ the Gaussian quadrature to the interval [a, b].</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The end of the interval.</p>
+                <p>El final del intervalo.</p>
               </div>
             </td>
             <td>
@@ -637,7 +637,7 @@ the Gaussian quadrature to the interval [a, b].</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The sample points.</p>
+                <p>Los puntos de muestra.</p>
               </div>
             </td>
             <td>
@@ -653,7 +653,7 @@ the Gaussian quadrature to the interval [a, b].</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The weights.</p>
+                <p>Los pesos.</p>
               </div>
             </td>
             <td>
@@ -678,9 +678,9 @@ the Gaussian quadrature to the interval [a, b].</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A tuple containing two numpy arrays:
-- scaled_x (numpy.ndarray): The scaled sample points.
-- scaled_w (numpy.ndarray): The scaled weights.</p>
+                <p>Una tupla que contiene dos arreglos de numpy:
+- scaled_x (numpy.ndarray): Los puntos de muestra escalados.
+- scaled_w (numpy.ndarray): Los pesos escalados.</p>
               </div>
             </td>
           </tr>
@@ -711,25 +711,25 @@ the Gaussian quadrature to the interval [a, b].</p>
 <span class="normal">59</span>
 <span class="normal">60</span>
 <span class="normal">61</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussxwab</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Scale sample points and weights to a specific interval.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Escalar puntos de muestra y pesos a un intervalo específico.</span>
 
-<span class="sd">    This function scales the sample points and weights obtained from</span>
-<span class="sd">    the Gaussian quadrature to the interval [a, b].</span>
+<span class="sd">    Esta función escala los puntos de muestra y los pesos obtenidos de</span>
+<span class="sd">    la cuadratura gaussiana al intervalo [a, b].</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        &gt;&gt;&gt; gaussxwab(0,2, x0_points_N_2, weights_N_2)</span>
 <span class="sd">        (array([1.57735027, 1.57735027]), array([1., 1.]))</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        a (float): The start of the interval.</span>
-<span class="sd">        b (float): The end of the interval.</span>
-<span class="sd">        x (numpy.ndarray): The sample points.</span>
-<span class="sd">        w (numpy.ndarray): The weights.</span>
+<span class="sd">        a (float): El inicio del intervalo.</span>
+<span class="sd">        b (float): El final del intervalo.</span>
+<span class="sd">        x (numpy.ndarray): Los puntos de muestra.</span>
+<span class="sd">        w (numpy.ndarray): Los pesos.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        tuple: A tuple containing two numpy arrays:</span>
-<span class="sd">            - scaled_x (numpy.ndarray): The scaled sample points.</span>
-<span class="sd">            - scaled_w (numpy.ndarray): The scaled weights.</span>
+<span class="sd">        tuple: Una tupla que contiene dos arreglos de numpy:</span>
+<span class="sd">            - scaled_x (numpy.ndarray): Los puntos de muestra escalados.</span>
+<span class="sd">            - scaled_w (numpy.ndarray): Los pesos escalados.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">a</span><span class="p">),</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">w</span>
 </code></pre></div></td></tr></table></div>
@@ -749,9 +749,9 @@ the Gaussian quadrature to the interval [a, b].</p>
 
     <div class="doc doc-contents ">
 
-        <p>Compute the value of the integrand function.</p>
-<p>This function computes the value of the function to be integrated,
-which is x^6 - x^2 * sin(2 * x).</p>
+        <p>Calcular el valor de la función integrando.</p>
+<p>Esta función calcula el valor de la función a integrar,
+que es x^6 - x^2 * sin(2 * x).</p>
 
 
 <p><span class="doc-section-title">Examples:</span></p>
@@ -776,11 +776,11 @@ which is x^6 - x^2 * sin(2 * x).</p>
                 <code>x</code>
             </td>
             <td>
-                  <code>float or <span title="numpy.ndarray">ndarray</span></code>
+                  <code>float o numpy.ndarray</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The input value(s).</p>
+                <p>El valor o valores de entrada.</p>
               </div>
             </td>
             <td>
@@ -805,7 +805,7 @@ which is x^6 - x^2 * sin(2 * x).</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>float or numpy.ndarray: The computed value of the function.</p>
+                <p>float o numpy.ndarray: El valor calculado de la función.</p>
               </div>
             </td>
           </tr>
@@ -831,20 +831,20 @@ which is x^6 - x^2 * sin(2 * x).</p>
 <span class="normal">77</span>
 <span class="normal">78</span>
 <span class="normal">79</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">int_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the value of the integrand function.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calcular el valor de la función integrando.</span>
 
-<span class="sd">    This function computes the value of the function to be integrated,</span>
-<span class="sd">    which is x^6 - x^2 * sin(2 * x).</span>
+<span class="sd">    Esta función calcula el valor de la función a integrar,</span>
+<span class="sd">    que es x^6 - x^2 * sin(2 * x).</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        &gt;&gt;&gt; int_function(3)</span>
 <span class="sd">        731.5147394837903</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        x (float or numpy.ndarray): The input value(s).</span>
+<span class="sd">        x (float o numpy.ndarray): El valor o valores de entrada.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        float or numpy.ndarray: The computed value of the function.</span>
+<span class="sd">        float o numpy.ndarray: El valor calculado de la función.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">6</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
